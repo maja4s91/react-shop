@@ -1,3 +1,10 @@
+import data from "../data";
+import Products from "../components/products/Products";
+
 export default function Home() {
-  return <h1>Home comp</h1>;
+  return (
+    <div>
+      <Products products={data} />
+    </div>
+  );
 }
