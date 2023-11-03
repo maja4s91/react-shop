@@ -9,7 +9,7 @@ export default function Single() {
   console.log(product);
 
   return (
-    <div className="row">
+    <div className="row py-5">
       <div className="col-6">
         <img src={require(`../images/${product.id}.jpg`)} className="w-50" />
       </div>

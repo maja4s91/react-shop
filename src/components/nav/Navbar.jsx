@@ -1,12 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import CategorySelector from "./CategorySelector.1";
 import SearchBar from "./SearchBar";
 import CartButton from "./CartButton";
 
 export default function Navbar({ title }) {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar navbar-dark navbar-expand-lg fixed-top border-bottom">
       <div className="container-fluid px-md-5">
-        <span id="name" className="navbar-brand fw-bold pointer">
+        <span
+          onClick={() => navigate("/")}
+          id="name"
+          className="navbar-brand fw-bold pointer"
+        >
           {title}
         </span>
         <button

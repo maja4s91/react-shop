@@ -1,11 +1,13 @@
+import Product from "./Product";
+
 export default function Products({ products = [] }) {
   return (
-    <div className="container py-5 px-5">
-      <ul>
+    <div className="px-lg-5 text-dark py-5">
+      <div className="row row-cols-1 row-cols-sm-2 row-cals-lg-3 row-cols-xl-4 gy-4">
         {products.map((product) => (
-          <li>{product.name}</li>
+          <Product key={product.id} product={product} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
