@@ -1,3 +1,6 @@
+import CardBuyButton from "../components/Card/CardBuyButton";
+import CardItem from "../components/Card/CardItem";
+import CardNumbers from "../components/Card/CardNumbers";
 import NoContent from "../components/extra/NoContent";
 import data from "../data";
 
@@ -17,12 +20,12 @@ export default function Cart() {
           >
             <h4 className="mb-3 px-1">Cart</h4>
             <ul className="list-group mb-3 cart-list">
-              {items.map((item) => (
-                <h4 key={item.id}>Cart component here! {item.name}</h4>
+              {items.map((i) => (
+                <CardItem key={i.id} item={i} />
               ))}
             </ul>
-            {/* {Cart Numbers} */}
-            {/* {Cart Button} */}
+            <CardNumbers />
+            <CardBuyButton />
           </div>
         </div>
       </div>
