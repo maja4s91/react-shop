@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom";
 import ProductButton from "../components/products/ProductButton";
 import Line from "../components/extra/Line";
 import Products from "../components/products/Products";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { actions as productsActions } from "../global/slices/productsSlice";
+import { useEffect } from "react";
 
 export default function Single() {
   const { id } = useParams();
@@ -10,6 +12,10 @@ export default function Single() {
   const { single, singleSimilarProducts } = useSelector(
     (state) => state.products
   );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(productsActions.setSingle(id));
+  }, [id]);
 
   return (
     <div>
