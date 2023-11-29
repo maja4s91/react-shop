@@ -18,7 +18,7 @@ export default function Product({ product }) {
         </div>
 
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent ">
-          <ProductButton />
+          <ProductButton product={product} />
         </div>
       </div>
     </div>

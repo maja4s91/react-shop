@@ -2,10 +2,10 @@ import CardBuyButton from "../components/Card/CardBuyButton";
 import CardItem from "../components/Card/CardItem";
 import CardNumbers from "../components/Card/CardNumbers";
 import NoContent from "../components/extra/NoContent";
-import data from "../data";
+import { useSelector } from "react-redux";
 
 export default function Cart() {
-  const items = data.slice(0, 3);
+  const { items } = useSelector((state) => state.cart);
   if (items.length === 0)
     return (
       <NoContent text={"Nothing in Your Cart"} btnText={"Browse Product"} />
