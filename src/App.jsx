@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/nav/Navbar";
 import Home from "./pages/Home";
 import Single from "./pages/Single";
@@ -9,11 +9,16 @@ import { useEffect } from "react";
 
 export default function App() {
   const dispatch = useDispatch();
+  const location = useLocation();
   const { items } = useSelector((state) => state.cart);
 
   useEffect(() => {
     dispatch(cartActions.calculateCartNumbers());
-  }, [items]);
+  }, [items, dispatch]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <div className="wrapper bg-dark text-white">

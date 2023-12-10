@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import CategorySelector from "./CategorySelector.1";
 import SearchBar from "./SearchBar";
 import CartButton from "./CartButton";
+import Condition from "../extra/Condition";
 
 export default function Navbar({ title }) {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   return (
     <nav className="navbar navbar-dark navbar-expand-lg fixed-top border-bottom">
@@ -28,8 +30,15 @@ export default function Navbar({ title }) {
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
-          <CategorySelector />
-          <SearchBar />
+          <Condition
+            test={pathname === "/"}
+            success={
+              <>
+                <CategorySelector />
+                <SearchBar />
+              </>
+            }
+          />
           <CartButton />
         </div>
       </div>

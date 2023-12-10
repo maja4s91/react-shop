@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { actions as cartActions } from "../../global/slices/cartSlice";
+import Price from "../extra/Price";
 
 export default function CardItem({ item }) {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export default function CardItem({ item }) {
     <li className="list-group-item">
       <div className="my-0 d-flex justify-content-between align-items-center">
         <span className="fw-bolder fs-6 me-auto">
-          {item.name}({item.price})
+          {item.name}(<Price value={item.price} />)
         </span>
         <div className="btn-group">
           <button

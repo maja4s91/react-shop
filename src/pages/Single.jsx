@@ -5,6 +5,7 @@ import Products from "../components/products/Products";
 import { useDispatch, useSelector } from "react-redux";
 import { actions as productsActions } from "../global/slices/productsSlice";
 import { useEffect } from "react";
+import Price from "../components/extra/Price";
 
 export default function Single() {
   const { id } = useParams();
@@ -31,7 +32,9 @@ export default function Single() {
         </div>
         <div className="col-md-6 text-center text-md-start">
           <h2 className="fs-1 fw-bold">{single.name}</h2>
-          <div className="fs-5 mb-2">{single.price}</div>
+          <div className="fs-5 mb-2">
+            <Price value={single.price} />
+          </div>
           <p className="lead">{single.description}</p>
           <ProductButton product={single} />
         </div>

@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import Price from "../extra/Price";
 
 export default function CardNumbers() {
   const { cartNumbers } = useSelector((state) => state.cart);
@@ -17,7 +18,9 @@ export default function CardNumbers() {
           className="list-group-item d-flex justify-content-between"
         >
           <span>{r.title}</span>
-          <span className="text-muted">{r.price}</span>
+          <span className="text-muted">
+            <Price value={r.price} decimal={2} />
+          </span>
         </li>
       ))}
     </ul>
