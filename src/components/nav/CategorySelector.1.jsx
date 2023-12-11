@@ -25,7 +25,7 @@ export default function CategorySelector() {
             }}
             key={category}
           >
-            <a href="#" className="dropdown-item pointer">
+            <a href="/" className="dropdown-item pointer">
               {category}
             </a>
           </li>
