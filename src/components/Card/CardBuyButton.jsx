@@ -6,7 +6,7 @@ export default function CardBuyButton({ title = "Buy Now" }) {
   const buy = () => {
     if (window.confirm("Would you like to place your order?")) {
       window.alert("Order placed successfully! Thank you!");
-      nav("/");
+      navigate("/");
       window.location.reload();
     }
   };
