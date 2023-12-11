@@ -9,7 +9,7 @@ export default function Navbar({ title = "" }) {
   const { pathname } = useLocation();
 
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg fixed-top border-bottom">
+    <nav className="navbar navbar-dark bg-dark  navbar-expand-lg fixed-top border-bottom">
       <div className="container-fluid px-md-5">
         <span
           onClick={() => navigate("/")}
@@ -23,6 +23,9 @@ export default function Navbar({ title = "" }) {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
