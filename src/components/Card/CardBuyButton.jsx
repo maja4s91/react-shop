@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 export default function CardBuyButton({ title = "Buy Now" }) {
+  const navigate = useNavigate();
+
   const buy = () => {
-    console.log("buy");
+    if (window.confirm("Would you like to place your order?")) {
+      window.alert("Order placed successfully! Thank you!");
+      nav("/");
+      window.location.reload();
+    }
   };
 
   return (
