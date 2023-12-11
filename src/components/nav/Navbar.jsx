@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import CartButton from "./CartButton";
 import Condition from "../extra/Condition";
 
-export default function Navbar({ title }) {
+export default function Navbar({ title = "" }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 

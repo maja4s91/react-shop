@@ -35,7 +35,7 @@ export default function Single() {
           <div className="fs-5 mb-2">
             <Price value={single.price} />
           </div>
-          <p className="lead">{single.description}</p>
+          <p className="lead">{single.description.substring(0, 100)}</p>
           <ProductButton product={single} />
         </div>
       </div>

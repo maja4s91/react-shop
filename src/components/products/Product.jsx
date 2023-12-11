@@ -12,6 +12,8 @@ export default function Product({ product }) {
           onClick={() => navigate(`/single/${product.id}`)}
           className="card-img-top pointer"
           src={require(`../../images/${product.id}.jpg`)}
+          title={product.name}
+          alt={product.name}
         />
         <div className="card-body p4 text-center">
           <h6 className="fw-bolder">{product.name}</h6>

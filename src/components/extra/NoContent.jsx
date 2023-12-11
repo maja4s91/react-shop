@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function ({ text = "abc", btnText = "xyz" }) {
+export default function ({ text = "", btnText = "" }) {
   const navigate = useNavigate();
 
   return (
